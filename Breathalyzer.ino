@@ -1,4 +1,4 @@
-/*When the alcohol molecules in the air meet the electrode that is between alumina and tin dioxide,
+/*When the alcohol molecules in the air meet the electrode that is between aluminum and tin dioxide,
 ethanol burns into acetic acid then more current is produced. So the more alcohol molecules there are, 
 the more current we will get. Because of this current change, we get the different values from the sensor.*/
 
@@ -68,13 +68,29 @@ lcd1.clear();
  //int limit= digitalRead(0);                          //reads the digital value from the alcohol sensor's DOUT pin, can be used to read when there is a high reading
 //
 //
-//
+
 // state= digitalRead(switchP);
 //
 //  if(state==false){                                    //press the button to get a BAC reading
+
+    lcd1.clear();
+    lcd1.print("Breathe into the sensor for 5 seconds");
+    int counter=5;
+    int index=0;
+         int start=millis();
+         int count=millis();
+         
+     while((count-start)<5000){
+      count=millis();
+      lcd1.setCursor(0,1);
+      lcd1.print(counter);
 //    float sensorReading = analogRead(0);
-//    result =abs(original-sensorReading);
-//
+//    result +=abs(original-sensorReading);
+      --counter;     //used for a timer
+      ++index;      //tracks the number of readings
+     }
+//   
+      result= result/index;       //take the average of the result
 //
 //     if(result<75){
 //      result=.01;
