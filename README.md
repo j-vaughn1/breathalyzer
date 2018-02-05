@@ -1,5 +1,7 @@
 # breathalyzer
 
+Breathalyzer built using an Arduino uno and mq8 gas sensor.
+
 /*When the alcohol molecules in the air meet the electrode that is between aluminum and tin dioxide,
 ethanol burns into acetic acid then more current is produced. So the more alcohol molecules there are, 
 the more current we will get. Because of this current change, we get the different values from the sensor.*/
